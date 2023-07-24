@@ -1,0 +1,15 @@
+1. Run npm install to get necessary files {x}
+
+2. Set up my client side listeners $('#addJokeButton').on('click', addJoke ); {}
+    -npm start to check 
+3. Make addJoke() function which will POST using ajax ... route is /badjokes {} 
+
+4. Set up GET route with ajax ... function getJokes(... client side!) {}
+ 
+5. Make skeleton for render()... think about For loop. {}
+
+6. Server side --- declare let jokes{}
+
+7. Make app.get ----> test with POSTMAN! {}
+
+8. Make app.post... make sure it pushes incoming data into jokes[] ---> test with POSTMAN{}
