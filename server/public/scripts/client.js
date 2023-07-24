@@ -22,10 +22,10 @@ function getJokes() {
         url: '/badjokes'
     }).then((response) => {
         console.log("getJokes response: ", response)
-        render(response) // Called 'allJokes' in render()
+        render(response) // Called 'OUT' in render()
 
         // Isolate last result
-        //et currentJoke = response[response.length - 1]?.result
+        //Let currentJoke = response[response.length - 1]?.result
         // If undefined, set to empty array so DOM is empty
         //if (currentJoke == undefined) {
          //   currentJoke = ''
@@ -43,12 +43,12 @@ function addJoke() {
 
     let whose = $('#whoseJokeIn').val();
     let question = $('#questionIn').val();
-    let punchline = $('#punchlineIn').val();
+    let punchLine = $('#punchlineIn').val();
 
     let dataToSend = {
         whose,
         question,
-        punchline
+        punchLine
     }
 
     console.log("dataToSend: ", dataToSend)
@@ -84,7 +84,7 @@ function render(allJokes) {
     for (let joke of allJokes) {
         console.log("Inside of For Loop")
         $('#outpuDiv').append(`
-            <li>${joke.whose}  ${joke.question}  ${joke.punchline}</li>
+            <li>${joke.whose}  ${joke.question}  ${joke.punchLine}</li>
         `)
     }
 
