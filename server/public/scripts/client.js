@@ -73,7 +73,7 @@ function addJoke() {
 }
 
 
-/*function render(allJokes) {
+function render(allJokes) {
     console.log("In render()")
     // will clear dom container for results
     // append new reselts to dom container
@@ -84,8 +84,8 @@ function addJoke() {
     for (let joke of allJokes) {
         console.log("Inside of For Loop")
         $('#allJokes').append(`
-            <li>${whose}  ${question}  ${punchline}</li>
+            <li>${joke.whose}  ${joke.question}  ${joke.punchline}</li>
         `)
     }
 
-}*/
+}
