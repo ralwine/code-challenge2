@@ -25,16 +25,16 @@ function getJokes() {
         render(response) // Called 'allJokes' in render()
 
         // Isolate last result
-        //let currentResult = response[response.length - 1]?.result
+        //et currentJoke = response[response.length - 1]?.result
         // If undefined, set to empty array so DOM is empty
-        //if (currentResult == undefined) {
-        //    currentResult = ''
+        //if (currentJoke == undefined) {
+         //   currentJoke = ''
         //}
 
         // Passing Current result to render in DOM
-        //renderCurrentResult(currentResult)
+        //renderCurrentJoke(currentJoke)
     }).catch((error) => {
-        alert("Error sending GET request /math")
+        alert("Error sending GET request /badJokes")
     })
 }
 
@@ -67,7 +67,7 @@ function addJoke() {
         console.log('POST was successeful!')
         getJokes() // calls render()
     }).catch((error) => {
-        alert("Error sending POST request /math")
+        alert("Error sending POST request /badJokes")
         console.log("Error with POST: ", error)
     })
 }
@@ -78,12 +78,12 @@ function render(allJokes) {
     // will clear dom container for results
     // append new reselts to dom container
 
-    $('#allJokes').empty()
+    $('#outputDiv').empty()
 
     //number1,number2, operator,result
     for (let joke of allJokes) {
         console.log("Inside of For Loop")
-        $('#allJokes').append(`
+        $('#outpuDiv').append(`
             <li>${joke.whose}  ${joke.question}  ${joke.punchline}</li>
         `)
     }
