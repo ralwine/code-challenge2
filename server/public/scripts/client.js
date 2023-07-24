@@ -21,8 +21,8 @@ function getJokes() {
         method: 'GET',
         url: '/badjokes'
     }).then((response) => {
-        console.log("getHistory response: ", response)
-        //render(response) // Called 'allCalcs' in render()
+        console.log("getJokes response: ", response)
+        render(response) // Called 'allJokes' in render()
 
         // Isolate last result
         //let currentResult = response[response.length - 1]?.result
@@ -41,13 +41,14 @@ function getJokes() {
 function addJoke() {
     console.log('in addJoke');
 
-    /*let number1 = $('#num1').val();
-    let number2 = $('#num2').val();
+    let whose = $('#whoseJokeIn').val();
+    let question = $('#questionIn').val();
+    let punchline = $('#punchlineIn').val();
 
     let dataToSend = {
-        number1,
-        number2,
-        operator
+        whose,
+        question,
+        punchline
     }
 
     console.log("dataToSend: ", dataToSend)
@@ -59,7 +60,7 @@ function addJoke() {
 
     $.ajax({
         method: 'POST',
-        url: '/jokes',
+        url: '/badjokes',
         // Entire data prop will be req.body on server
         data: dataToSend
     }).then((response) => {
@@ -68,6 +69,23 @@ function addJoke() {
     }).catch((error) => {
         alert("Error sending POST request /math")
         console.log("Error with POST: ", error)
-    })*/
+    })
 }
 
+
+/*function render(allJokes) {
+    console.log("In render()")
+    // will clear dom container for results
+    // append new reselts to dom container
+
+    $('#allJokes').empty()
+
+    //number1,number2, operator,result
+    for (let joke of allJokes) {
+        console.log("Inside of For Loop")
+        $('#allJokes').append(`
+            <li>${whose}  ${question}  ${punchline}</li>
+        `)
+    }
+
+}*/

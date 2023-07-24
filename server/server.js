@@ -10,7 +10,7 @@ let jokes = [
   {
     whoseJoke: "Danny",
     jokeQuestion: "Why do scuba divers fall backwards out of boats?",
-    punchLine: "If they fell forwards they’d still be in the boat!"
+    punchLine: "If they fell forwards they’/d still be in the boat!"
   },
   {
     whoseJoke: "Luke",
@@ -34,8 +34,34 @@ let jokes = [
   }
 ];
 
+app.get('/badjokes', (req, res) => {
+  console.log("in server, /jokes", jokes)
+  res.send(jokes)
+})
+
 // serve back static files
 app.use(express.static('server/public'));
+
+app.post('/badjokes', (req, res) => {
+  const whose = Number(req.body.number1)
+  const question = Number(req.body.number2)
+  const punchLine = req.body.operator
+
+  // Calculate based on incoming data
+  //let result = calculate(number1, number2, operator); // 
+
+  // Adding recent number and calculation to history array, as objects.
+  let incomingJokes = {
+      whose,
+      question,
+      punchLine
+  }
+
+  console.log('Current Joke: ', incomingJokes)
+  jokes.push(incomingJokes)
+
+  res.sendStatus(201)
+})
 
 app.listen(PORT, () => {
   console.log('server running on: ', PORT);

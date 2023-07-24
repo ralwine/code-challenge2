@@ -1,10 +1,10 @@
 1. Run npm install to get necessary files {x}
 
-2. Set up my client side listeners $('#addJokeButton').on('click', addJoke ); {}
+2. Set up my client side listeners $('#addJokeButton').on('click', addJoke ); {x}
     -npm start to check 
-3. Make addJoke() function which will POST using ajax ... route is /badjokes {} 
+3. Make addJoke() function which will POST using ajax ... route is /badjokes {x} 
 
-4. Set up GET route with ajax ... function getJokes(... client side!) {}
+4. Set up GET route with ajax ... function getJokes(... client side!) {x}
  
 5. Make skeleton for render()... think about For loop. {}
 
