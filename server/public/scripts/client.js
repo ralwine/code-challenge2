@@ -83,7 +83,7 @@ function render(allJokes) {
     //number1,number2, operator,result
     for (let joke of allJokes) {
         console.log("Inside of For Loop")
-        $('#outpuDiv').append(`
+        $('#outputDiv').append(`
             <li>${joke.whose}  ${joke.question}  ${joke.punchLine}</li>
         `)
     }
