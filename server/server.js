@@ -43,9 +43,9 @@ app.get('/badjokes', (req, res) => {
 app.use(express.static('server/public'));
 
 app.post('/badjokes', (req, res) => {
-  const whoseJoke = Number(req.body.number1)
-  const jokeQuestion = Number(req.body.number2)
-  const punchLine = req.body.operator
+  const whoseJoke = req.body.whoseJoke
+  const jokeQuestion = req.body.jokeQuestion
+  const punchLine = req.body.punchLine
 
   // Calculate based on incoming data
   //let result = calculate(number1, number2, operator); // 
