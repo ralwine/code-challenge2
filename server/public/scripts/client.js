@@ -41,13 +41,13 @@ function getJokes() {
 function addJoke() {
     console.log('in addJoke');
 
-    let whose = $('#whoseJokeIn').val();
-    let question = $('#questionIn').val();
+    let whoseJoke = $('#whoseJokeIn').val();
+    let jokeQuestion = $('#questionIn').val();
     let punchLine = $('#punchlineIn').val();
 
     let dataToSend = {
-        whose,
-        question,
+        whoseJoke,
+        jokeQuestion,
         punchLine
     }
 
@@ -84,7 +84,7 @@ function render(allJokes) {
     for (let joke of allJokes) {
         console.log("Inside of For Loop")
         $('#outputDiv').append(`
-            <li>${joke.whose}  ${joke.question}  ${joke.punchLine}</li>
+            <li>${joke.whoseJoke}  ${joke.jokeQuestion}  ${joke.punchLine}</li>
         `)
     }
 

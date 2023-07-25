@@ -10,7 +10,7 @@ let jokes = [
   {
     whoseJoke: "Danny",
     jokeQuestion: "Why do scuba divers fall backwards out of boats?",
-    punchLine: "If they fell forwards they’/d still be in the boat!"
+    punchLine: "If they fell forwards they’d still be in the boat!"
   },
   {
     whoseJoke: "Luke",
@@ -43,8 +43,8 @@ app.get('/badjokes', (req, res) => {
 app.use(express.static('server/public'));
 
 app.post('/badjokes', (req, res) => {
-  const whose = Number(req.body.number1)
-  const question = Number(req.body.number2)
+  const whoseJoke = Number(req.body.number1)
+  const jokeQuestion = Number(req.body.number2)
   const punchLine = req.body.operator
 
   // Calculate based on incoming data
@@ -52,8 +52,8 @@ app.post('/badjokes', (req, res) => {
 
   // Adding recent number and calculation to history array, as objects.
   let incomingJokes = {
-      whose,
-      question,
+      whoseJoke,
+      jokeQuestion,
       punchLine
   }
 
